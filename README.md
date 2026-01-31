@@ -6,6 +6,10 @@
 # mcp-local-rag
 "primitive" RAG-like web search model context protocol (MCP) server that runs locally. ✨ no APIs ✨
 
+A RAG-based web search and deep research model context protocol (MCP) server that runs entirely locally. Features multi-engine research across 9+ search backends with semantic similarity ranking, and requires no API keys.
+
+- [Features](#features)
+  - [Multi-Engine Deep Research](#multi-engine-deep-research)
 - [Installation](#installation)
     - [Run Directly via `uvx`](#run-directly-via-uvx)
     - [Using Docker (recommended)](#using-docker-recommended)
@@ -44,6 +48,35 @@ flowchart TD
     class B,C process;
     class G output;
 ```
+
+# Features
+
+## Multi-Engine Deep Research
+The server supports comprehensive multi-engine research capabilities that go beyond simple single-query searches:
+
+- **9+ Search Backends**: DuckDuckGo, Google, Bing, Brave, Wikipedia, Yahoo, Yandex, Mojeek, Grokipedia
+- **Multi-Topic Research**: Search multiple related queries simultaneously
+- **Semantic Ranking**: RAG-like similarity scoring ranks the most relevant results
+- **Privacy Options**: Choose privacy-focused engines (DuckDuckGo, Brave) or comprehensive ones (Google)
+- **No API Keys Required**: All processing runs locally with embedded models
+
+### Deep Research Tools
+
+1. **`deep_research`** - Comprehensive multi-engine research
+   - Search across multiple engines simultaneously
+   - Ideal for complex topics requiring diverse perspectives
+   - Customizable backends and result limits
+
+2. **`deep_research_google`** - Google-focused deep dive
+   - Leverage Google's comprehensive index
+   - Best for technical/scientific queries
+
+3. **`deep_research_ddgs`** - Privacy-first deep research
+   - Use DuckDuckGo for private, extensive research
+   - Great for general topics without tracking
+
+4. **`rag_search_ddgs`** & **`rag_search_google`** - Quick single searches
+   - Fast, focused searches when you need quick answers
 
 # Installation
 Locate your MCP config path [here](https://modelcontextprotocol.io/quickstart/user) or check your MCP client settings. 
@@ -91,15 +124,20 @@ Add this to your MCP server configuration:
 
 # Agent Skills
 
-This repository includes **Agent Skills** that teach Claude how to effectively use the mcp-local-rag tools. Skills are folders of instructions that Claude loads dynamically to improve performance on specialized tasks.
+This repository includes **Agent Skills** that teach Claude how to effectively use the mcp-local-rag tools for intelligent web searches and deep research. Skills are folders of instructions that Claude loads dynamically to improve performance on specialized tasks.
 
 ### Available Skills
 
 **`local-rag-search`** - Teaches Claude best practices for:
-- Choosing the right search tool (DuckDuckGo, Google, or deep research)
-- Formulating effective search queries
-- Tuning parameters for different use cases
-- Performing comprehensive multi-engine research
+- **Smart tool selection**: Choosing between quick searches or comprehensive deep research
+- **Multi-engine research**: Using multiple search backends for diverse perspectives
+- **Effective query formulation**: Writing natural language queries that yield better results
+- **Parameter tuning**: Adjusting `num_results`, `top_k`, and backend selection for different use cases
+- **Privacy-aware searching**: Defaulting to privacy-focused engines while allowing comprehensive searches when needed
+
+### Deep Research Use Cases
+
+The skill enables comprehensive topic research using multiple search terms and engines. It's particularly useful for technical deep dives that leverage Google's documentation coverage, multi-perspective analysis that compares information across different search engines, privacy-focused research using DuckDuckGo or Brave, and factual verification by cross-referencing Wikipedia and other authoritative sources.
 
 ### Using the Skills
 
@@ -109,7 +147,10 @@ This repository includes **Agent Skills** that teach Claude how to effectively u
 3. Select `skills/local-rag-search/`
 
 **In conversations:**
-Once loaded, simply ask Claude to search for information and it will automatically apply the skill's best practices.
+Once loaded, simply ask Claude to search for information and it will automatically apply the skill's best practices. Try queries like:
+- "Do deep research on recent quantum computing developments"
+- "Search multiple sources for sustainable energy solutions"
+- "Find comprehensive technical documentation about Kubernetes optimization"
 
 Learn more about Agent Skills at the [Anthropic Skills Repository](https://github.com/anthropics/skills).
 
