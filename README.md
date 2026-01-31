@@ -82,7 +82,7 @@ Add this to your MCP server configuration:
         "--init",
         "-e",
         "DOCKER_CONTAINER=true",
-        "ghcr.io/nkapila6/mcp-local-rag:v1.0.1"
+        "ghcr.io/nkapila6/mcp-local-rag:v1.0.2"
       ]
     }
   }
