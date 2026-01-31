@@ -9,6 +9,7 @@
 - [Installation](#installation)
     - [Run Directly via `uvx`](#run-directly-via-uvx)
     - [Using Docker (recommended)](#using-docker-recommended)
+- [Agent Skills](#agent-skills)
 - [Security audits](#security-audits)
 - [MCP Clients](#mcp-clients)
 - [Examples on Claude Desktop](#examples-on-claude-desktop)
@@ -87,6 +88,32 @@ Add this to your MCP server configuration:
   }
 }
 ```
+
+# Agent Skills
+
+This repository includes **Agent Skills** that teach Claude how to effectively use the mcp-local-rag tools. Skills are folders of instructions that Claude loads dynamically to improve performance on specialized tasks.
+
+### Available Skills
+
+**`local-rag-search`** - Teaches Claude best practices for:
+- Choosing the right search tool (DuckDuckGo, Google, or deep research)
+- Formulating effective search queries
+- Tuning parameters for different use cases
+- Performing comprehensive multi-engine research
+
+### Using the Skills
+
+**In Claude Desktop:**
+1. Go to **Settings** → **Skills**
+2. Click **Add Skill** → **Add from folder**
+3. Select `skills/local-rag-search/`
+
+**In conversations:**
+Once loaded, simply ask Claude to search for information and it will automatically apply the skill's best practices.
+
+Learn more about Agent Skills at the [Anthropic Skills Repository](https://github.com/anthropics/skills).
+
+See the [skills/README.md](skills/README.md) for detailed usage instructions and skill development guidelines.
 
 # Security audits
 MseeP does security audits on every MCP server, you can see the security audit of this MCP server by clicking [here](https://mseep.ai/app/nkapila6-mcp-local-rag).
