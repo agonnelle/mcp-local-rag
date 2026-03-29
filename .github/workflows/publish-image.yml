@@ -39,13 +39,13 @@ jobs:
       - name: Build the MCP Docker Image
         run: |
           docker build . \
-            --tag ghcr.io/${{ env.REPO }}:${{ github.ref_name }} \
+            --tag ghcr.io/${{ env.REPO }}:${{ env.TAG }} \
             --label io.modelcontextprotocol.server.name="io.github.${{ env.REPO }}"
 
       - name: Run the container
         if: success()
-        run: docker run ghcr.io/${{ env.REPO }}:${{ github.ref_name }}
+        run: docker run ghcr.io/${{ env.REPO }}:${{ env.TAG }}
 
       - name: Publish to GitHub Container Registry
         if: success()
-        run: docker push ghcr.io/${{ env.REPO }}:${{ github.ref_name }}
+        run: docker push ghcr.io/${{ env.REPO }}:${{ env.TAG }}
