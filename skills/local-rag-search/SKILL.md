@@ -47,7 +47,7 @@ Use this for comprehensive research across multiple search engines.
 - `wikipedia`: Encyclopedia/factual content
 - `yahoo`, `yandex`, `mojeek`, `grokipedia`: Alternative engines
 
-**Default:** `["duckduckgo", "google"]`
+**Default:** `["duckduckgo", "brave", "bing", "wikipedia"]`
 
 ### 4. `deep_research_google` - Google-Only Deep Research
 Shortcut for deep research using only Google.
@@ -94,7 +94,7 @@ Shortcut for deep research using only DuckDuckGo.
            "neural networks architecture",
            "deep learning best practices 2024"
        ],
-       backends=["google", "duckduckgo"],
+       backends=["duckduckgo", "brave", "bing", "wikipedia"],
        top_k_per_term=5
    )
    ```
