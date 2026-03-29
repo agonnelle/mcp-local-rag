@@ -224,7 +224,7 @@ def deep_research(
 
     # safe default if none is given
     if backends is None:
-        backends = ["duckduckgo", "brave", "bing", "wikipedia"]
+        backends = ["duckduckgo", "brave", "bing", "google", "wikipedia"]
 
     return _deep_research_internal(
         search_terms=search_terms,
