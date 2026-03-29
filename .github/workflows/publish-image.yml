@@ -30,6 +30,10 @@ jobs:
       - name: Convert Repository name to lower case
         id: lowercase
         run: echo "REPO=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+      
+      - name: Sanitize ref name for Docker tag
+        id: sanitize
+        run: echo "TAG=$(echo "${{ github.ref_name }}" | tr '/' '-')" >> $GITHUB_ENV
 
       - name: Build the MCP Docker Image
         if: startsWith(github.ref, 'refs/tags/')
