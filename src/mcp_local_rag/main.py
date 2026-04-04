@@ -210,7 +210,7 @@ def deep_research(
         search_terms (List[str]): List of search terms to research. Provide multiple 
                                   related search queries for comprehensive coverage.
                                   Example: ["machine learning fundamentals", "neural networks", "deep learning best practices"]
-        backends (List[str] | None): List of search backends to use. Defaults to ["duckduckgo", "google"].
+        backends (List[str] | None): List of search backends to use. Defaults to ["duckduckgo", "brave", "bing", "wikipedia"].
                              Can include: bing, brave, duckduckgo, google, grokipedia, 
                              mojeek, yandex, yahoo, wikipedia. If None, uses default.
         num_results_per_term (int): Number of results to fetch per search term per backend.
