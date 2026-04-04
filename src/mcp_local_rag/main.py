@@ -196,10 +196,10 @@ def deep_research(
     1. Ask the user which backend(s) they prefer, OR
     2. Choose appropriate backend(s) based on context:
        - ["duckduckgo"] - Privacy-focused, general search
-       - ["google"] - Comprehensive results, best for technical queries
-       - ["duckduckgo", "google"] - Maximum coverage (default)
+       - ["brave"] - Comprehensive results, best for technical queries
+       - ["duckduckgo", "brave", "bing"] - Maximum coverage (default)
        - ["wikipedia"] - Factual/encyclopedia content
-       - ["bing", "google"] - Balanced commercial engines
+       - ["brave", "bing"] - Balanced commercial engines
        - Multiple backends for broader research coverage
     
     3. For specific use cases, consider:
